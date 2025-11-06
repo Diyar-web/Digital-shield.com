@@ -1,0 +1,489 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=WDXL+Lubrifont+TC&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blue: #0ea5e9;
+  --mtext: #728285;
+}
+body {
+  font-family: Inter, system-ui;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+.particle-left {
+  position: absolute;
+}
+.pos {
+  left: 2px;
+  top: 500px;
+}
+
+.vec {
+  top: 2950px;
+  left: 2px;
+}
+
+.vec2 {
+  right: 1px;
+  top: 1500px;
+}
+#helper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 9999;
+  animation: fadeIn 0.8s ease forwards;
+  transition: all 0.4s ease;
+}
+
+.helper-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.helper-avatar:hover {
+  transform: scale(1.05);
+}
+
+.helper-message {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  animation: popIn 0.4s ease forwards;
+  line-height: 1.4;
+  max-width: 260px;
+  word-wrap: break-word;
+}
+
+/* Ссылка в сообщении */
+.helper-message a {
+  color: #2575fc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.helper-message a:hover {
+  text-decoration: underline;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ === */
+@media (max-width: 768px) {
+  #helper {
+    right: 10px;
+    bottom: 15px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .helper-avatar {
+    width: 55px;
+    height: 55px;
+  }
+
+  .helper-message {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    max-width: 210px;
+    border-radius: 12px;
+  }
+}
+
+/* === ДЛЯ СУПЕР-МАЛЕНЬКИХ (телефоны 360px и ниже) === */
+@media (max-width: 400px) {
+  #helper {
+    right: 5px;
+    bottom: 10px;
+  }
+
+  .helper-message {
+    font-size: 0.8rem;
+    max-width: 180px;
+  }
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 55px;
+}
+
+.left-top-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  margin: 50px;
+  font-size: 21px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: var(--blue);
+  padding: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+}
+
+/* Main */
+
+#Modul {
+  margin-bottom: 55px;
+  max-width: 100%;
+}
+
+.title {
+  font-family: "El Messiri", sans-serif;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.boxes {
+  background-color: #e2e2e2;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1950px;
+}
+
+.box {
+  max-width: 550px;
+  margin: 25px;
+  padding: 35px;
+  margin-bottom: 40px;
+  background-color: #dbdbdb;
+  border: 1px solid #bebebe;
+  border-radius: 25px;
+  min-height: 245px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+button,
+.more-btn,
+.tg-btn {
+  transition: all 0.3s ease;
+}
+
+.box h3 {
+  /* font-family: "WDXL Lubrifont TC", sans-serif; */
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+
+.box p {
+  color: var(--mtext);
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.more-btn,
+.more-btn-parent {
+  max-width: 125px;
+  padding: 15px;
+  background-color: var(--blue);
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  border: 1px solid var(--blue);
+  transition: 0.5s;
+}
+
+.more-btn:hover {
+  background-color: #ffffff;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+/* Modal Window */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Плавное появление */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+  color: #0ea5e9;
+  font-size: 22px;
+}
+
+.modal-content p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  display: block;
+  margin: 20px auto 0 auto;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background-color: #0284c7;
+}
+
+/* QUIZ */
+
+.quiz-container {
+  max-width: 100%;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
+}
+.quiz-question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.quiz-option {
+  background: white;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #ddd;
+}
+.quiz-option:hover {
+  background: #e8f0fe;
+}
+.quiz-button {
+  margin-top: 20px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.quiz-reasoning {
+  background: #fff;
+  border-left: 4px solid #4a6cf7;
+  padding: 15px;
+  border-radius: 10px;
+}
+.quiz-result {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.contact {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 40px 40px 0 0;
+  margin-top: 80px;
+}
+
+.contact h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.tg-btn {
+  background-color: #fff;
+  color: #2575fc;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tg-btn:hover {
+  background-color: #2575fc;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(37, 117, 252, 0.7);
+}
+
+/* --- Футер --- */
+.footer {
+  /* background: #111;
+  color: #bbb; */
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .social-links a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.footer .social-links a:hover {
+  transform: scale(1.1);
+}
+
+.footer .social-links img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 1500px) {
+  .logo {
+    max-width: 150px;
+  }
+
+  body {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    flex-direction: column;
+  }
+  .left-top-side {
+    flex-direction: column;
+  }
+  nav {
+    flex-direction: column;
+    margin: 0;
+  }
+  nav a {
+    margin: 25px;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
